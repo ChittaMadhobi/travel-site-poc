@@ -1,0 +1,108 @@
+.large-hero {
+    position: relative;
+    border-bottom: 10px solid $mainBlue;
+
+    /* Let's make the image a 'block level' instead of 'in-line level' to get rid of the space  between the line the border-bottom*/
+    &__image {
+        display: block;
+    }
+
+    &__text-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__title {
+        font-weight: 300;
+        color: $mainBlue;        
+        margin: 0;   
+        font-size: 2.4rem;  
+        /*
+         The device types are defined in _mixins.css. The default is micro (however small)
+         Then atSmall (larger than 530px), atMedium (>800px), & atLarge (>1200px).
+         This 'mobile first would be used in all aspects of the implementation.
+        */
+        @mixin atSmall {
+            font-size: 4rem;
+        }
+        @mixin atMedium {
+            font-size: 4.4rem;
+        }
+        @mixin atLarge {
+            font-size: 4.8rem;
+        }
+     }
+
+     &__subtitle {
+        font-weight: 300;
+        color: $mainBlue;
+        font-size: 1.5rem;  /* This is base line since we are using mobile first  */
+        margin: 0;   /* Removing marging around the title */
+        @mixin atSmall {
+            font-size: 2.9rem;
+        }
+      }
+
+      &__description {
+        color: #fff;
+        font-size: 1.1rem; /* Designer said, text is 30 px thus, 30/16 = 1.875  */
+        font-weight: 100;
+        text-shadow: 2px 2px 0 rgba(0, 0 , 0, 50%);  /* Shadow is black and 10% visible  */
+        max-width: 30rem; /* Per design layout, it seemed 480 px hence 480/16 = 30rem  */
+        margin-left: auto; 
+        margin-right: auto;
+        margin-top: 0;
+        @mixin atSmall {
+            font-size: 1.875rem;
+        }
+      }
+
+}
+
+
+/* To center the whole text vertically, we would set 'top' to 50%. That will
+   make the top edge of the text section to middle but will still seem low.
+   So, we use tramslateY by -50% so the whole text position is pulled up
+   by 50% of its space ... and thus centering it there on the image.     
+   
+.large-hero__text-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+ However, the new emergence is B.E.M.  Block Element Modifier  
+
+ .large-hero__title {
+     font-weight: 300;
+     color: #2f5572;
+     font-size: 4.8rem;
+  }
+
+  .large-hero__subtitle {
+    font-weight: 300;
+    color: #2f5572;
+    font-size: 2.9rem;
+  }
+
+  This would work BUT ... we can cascade that in such a way that
+  it shows the hierarchy while 
+  GULP transforms the hierarchy into the above section.
+
+  Check the .large-hero class and how it is composed.
+
+  &__anything would be attached to the above class name. I.e.
+  .abcd {
+        &_anything { }
+  }
+  would transform into
+  .abcd {}
+  .abcd_anything {} in the output css file to make it flat and understandable by browser. 
+  */

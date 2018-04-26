@@ -1,0 +1,46 @@
+.headline {
+    font-weight: 300;
+    font-size: 1.8rem;
+
+    @mixin atSmall {
+        font-size: 2.875rem;  /* For bigger media ... this is good  */    
+    }
+
+    &--centered {
+        text-align: center;
+    }
+
+    &--orange {
+        color: $mainOrange;
+    }
+
+    &--small {
+        font-size: 1.2rem;
+        @mixin atSmall {
+            font-size: 1.875rem;
+        }
+    }
+
+    &--narrow {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &--light {
+        font-weight: 200;
+    }
+
+    &--b-margin-small {
+        margin-bottom: .5em;  /* em meand with reference to the text element itself. So, we can use it elsewhere */
+    }
+
+
+    &--b-margin-large {
+        margin-bottom: 1.6em;  /* em meand with reference to the text element itself. So, we can use it elsewhere */
+    }
+
+    &--no-t-margin {
+        margin-top: 0;
+    }
+}

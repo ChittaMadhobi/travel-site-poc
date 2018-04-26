@@ -1,0 +1,28 @@
+.wrapper {
+
+    overflow: hidden;
+    padding-left: 18px;
+    padding-right: 18px;
+    max-width: 1236px;  
+    margin-left: auto;
+    margin-right: auto;
+
+    &--medium {
+        max-width: 976px;
+    }
+
+    /* Telling  that any wrapper within a wrapper in html will have no padding.  */
+    .wrapper {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    &--b-margin {
+        /* For very small devices, default is 1 rem while bigger space for larger media */
+        margin-bottom: 1rem;
+
+        @mixin atSmall {
+            margin-bottom: 3.875rem;
+        }
+    }
+}

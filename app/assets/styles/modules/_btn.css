@@ -1,0 +1,20 @@
+.btn {
+    background-color: $mainBlue;
+    color: #fff;
+    text-decoration: none;  /* takes away the underline */
+    padding: .75rem 1.2rem; /* .75 is for top-bottom padding 1.2 rem is used for lef-right padding   */
+    display: inline-block; /* This will tell its sarrounding of its vertical padding*/
+
+    &--orange {
+        background-color: $mainOrange;
+    }
+
+    &--large {
+        font-size: .8rem;  /* This is needed for default is 1, but keeping it for specificity  */
+        padding: 1.1rem 1.9rem;
+        
+        @mixin atSmall {
+            font-size: 1.55rem;
+        }
+    }
+}

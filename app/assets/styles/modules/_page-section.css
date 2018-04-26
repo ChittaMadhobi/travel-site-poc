@@ -1,0 +1,13 @@
+.page-section {
+    /* Default for small screens */
+    padding: 1rem 0;
+
+    @mixin atMedium {
+        padding: 4.5rem 0;  /* Top-bottom padding is 4.5rem  with 0 or no horizontal padding   */   
+    }
+
+    &--blue {
+        background-color: $mainBlue;
+        color: #FFF;
+    }    
+}

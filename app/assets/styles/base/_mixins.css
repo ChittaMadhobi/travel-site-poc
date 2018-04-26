@@ -1,0 +1,27 @@
+@define-mixin atSmall {
+    @media (min-width: 530px) {
+        @mixin-content;
+    }
+}
+
+@define-mixin atMedium {
+    @media (min-width: 800px) {
+        @mixin-content;
+    }
+}
+
+@define-mixin atLarge {
+    @media (min-width: 1200px) {
+        @mixin-content;
+    }
+}
+
+
+
+@define-mixin clearfix {
+    &::after {        /* This is to say, 'do this after the class .row  */
+        content: "";  /* Place an empty content after the float  */
+        clear: both;  
+        display: table;
+    }
+}
