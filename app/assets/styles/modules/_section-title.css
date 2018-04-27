@@ -1,0 +1,29 @@
+.section-title {
+    font-size: 2.5rem;    /*  In design, it is about 60px. 60/16 = 3.75  */   
+    font-weight: 300;
+    text-align: center;
+
+    @mixin atSmall {
+        font-size: 3.75rem;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    &__icon {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: .6rem;
+
+        @mixin atSmall {
+            font-size: .5rem;
+            margin-left: 0;
+            margin-bottom: 0;
+            display: inline-block;
+        }
+        
+    }
+}
