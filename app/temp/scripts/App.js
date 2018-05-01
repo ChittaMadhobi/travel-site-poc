@@ -76,7 +76,11 @@ var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import StickyHeader from './modules/StickyHeader';
+
 var mobileMenu = new _MobileMenu2.default();
+
+//var stickyHeader = new StickyHeader();
 
 /***/ }),
 /* 1 */

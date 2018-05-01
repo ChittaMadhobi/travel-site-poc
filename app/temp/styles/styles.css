@@ -1129,6 +1129,7 @@ a {
 @media (min-width: 800px) {
 
 .site-header {
+        position: fixed;
         background-color: rgba(47,85,114, .3)
 }
     }
