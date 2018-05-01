@@ -15,12 +15,19 @@ gulp.task('watch', function(){
         //gulp.start('html');
         browserSync.reload();
     });
-// ** means any directory below styles that would  contain any file with css extension
+    // ** means any directory below styles that would  contain any file with css extension
     watch('./app/assets/styles/**/*.css', function(){
         // gulp.start('styles');
         //browserSync.reload();
         gulp.start('cssInject');
     });
+    // Now- to integrate webpack ... so to reflect any change in javascripts 
+    watch('./app/assets/scripts/**/*.js', function(){
+        // gulp.start('scripts'); // scripts is what we created in scripts.js file. However, this does not refresh the browser. For that
+        gulp.start('scriptRefresh');
+    });
+
+
 });
 
 /* 1. Gulp watch would execute cssInject when anything changes in any css files.
@@ -32,3 +39,8 @@ gulp.task('cssInject', ['styles'], function() {
     return gulp.src('./app/temp/styles/styles.css')
     .pipe(browserSync.stream());  //We include return since this is async function
 });
+
+// browserSync reload has a depndency on the completion of 'scripts' task.
+gulp.task('scriptRefresh', ['scripts'], function() {
+    browserSync.reload();   // after new js scripts are executed, reload the browser.
+}); 

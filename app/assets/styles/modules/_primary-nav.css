@@ -1,0 +1,62 @@
+.primary-nav{ 
+   
+    padding-top: 10px;
+
+    @maxin atMedium {
+        padding-top: 0;
+    }
+
+    &--pull-right {
+
+        @mixin atMedium {
+            float:  right;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        @mixin clearfix;
+    }
+ 
+    li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 7px;
+        @mixin atMedium {
+            padding-right: 20px;
+            float: left;
+            display: block;
+        }
+        
+    }
+
+    li:last-child {
+        padding-right: 0;
+        @mixin atMedium {
+            padding-right: 20px; 
+        }
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 400;
+        display: block;
+        /* padding-top: 12px; YYY */
+        /* padding: 20x 8px;  XXX */
+        padding-top: 3px; /* I added */
+        padding-bottom: 3px;
+        padding-right: 3px;
+        padding-left: 3px;
+        font-size: .7rem; /* XXX */
+        background-color: rgba($mainBlue, .9); /* XXX */
+        /* XXX */
+        @mixin atMedium {    
+            font-size: 1rem; /* XXX */
+            padding-top: 12px; 
+            background-color: transparent; /* XXX */
+        }
+    }
+
+}

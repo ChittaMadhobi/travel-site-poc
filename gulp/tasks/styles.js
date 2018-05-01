@@ -5,6 +5,7 @@ var cssvars = require('postcss-simple-vars');
 var nested = require('postcss-nested');
 var cssImport = require('postcss-import');
 var mixins = require('postcss-mixins');
+var hexrgba = require('postcss-hexrgba');
 
 
 gulp.task('styles', function() {
@@ -16,7 +17,7 @@ gulp.task('styles', function() {
     // nested is for enabling nested writing of css into browser understandable CSS format
     // and then the gulp destination
     return gulp.src('./app/assets/styles/styles.css')
-    .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
+    .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
     .on('error', function(errorInfo) {
         console.log('Error : ' + errorInfo.toString());
         this.emit('end');             // This will do a nice end in case of error without crashing
