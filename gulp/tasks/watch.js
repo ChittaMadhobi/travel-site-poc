@@ -1,6 +1,6 @@
 var gulp = require('gulp'); 
 var watch = require('gulp-watch');
-var browserSync = require('browser-sync').create(); //We need only one method create()
+var browserSync = require('browser-sync').create(); //Refresh the browser and just create once.
 
 gulp.task('watch', function(){
     // This does not notify that CSS has been injected on browser on change
